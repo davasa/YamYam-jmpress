@@ -27,12 +27,25 @@ It makes it easy to create a cool presentation while writing only in a simple ma
 See [markdown](http://github.com/sokra/YamYam-jmpress/blob/master/src/example.yam) of this file for example.
 Or next pages...
 
+## Startup
+
+Just clone or download the repo and add a file to `src/`.
+At first run `npm install` to install dependencies.
+Run `node .` to compile `src/` to `out/`.
+Or run `node watch` to autocompile on change.
+
 [page]
 
 # Reasons
 
 * HTML is such a noisy language and I wanted to concentrate on the content.
+
 * Design can be the same on all pages and presentations. It should be easy exchangeable.
+
+* Reusing of presentation styles. Contribution from the community.
+
+* Easy for beginners, but advanced things also possible.
+
 * ...
 
 [subtitle]
@@ -70,6 +83,7 @@ Next paragraph
 ```
 
 See this in action on next page...
+See more syntax on [sokra/YamYam](http://github.com/sokra/YamYam)
 
 [page]
 
@@ -90,6 +104,9 @@ Next paragraph
  * *light accented item*
  * __strong accented item__
 * `code item`
+
+see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
+
 
 [page]
 

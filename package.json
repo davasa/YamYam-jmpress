@@ -1,13 +1,13 @@
 {
 	"name": "YamYam-jmpress",
 	"description": "Jmpress.js presentations with YamYam Markdown",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": {
 		"name": "Tobias Koppers",
 		"url": "https://github.com/sokra"
 	},
 	"dependencies": {
-		"YamYam": "0.1.1",
+		"YamYam": "0.2.x",
 		"jade": "0.20.3"
 	}
 }
