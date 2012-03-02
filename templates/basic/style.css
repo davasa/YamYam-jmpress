@@ -21,6 +21,13 @@ section {
 	clear: both;
 }
 
+@media(print) {
+	section {
+		page-break-after: always;
+		margin-bottom: 0px;
+	}
+}
+
 section footer {
 	position: absolute;
 	top: 718px;
