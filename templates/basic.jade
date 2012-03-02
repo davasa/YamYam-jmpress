@@ -11,6 +11,8 @@ html(lang="en")
 		script(type="text/javascript", src="../templates/#{settings.template}/jmpress.all.js")
 		script(type="text/javascript", src="../templates/#{settings.template}/script.js")
 
+		script
+			var template = "#{settings.template}";
 	body
 		div#jmpress(data-template="main")
 			each section, pagenumber in sections

@@ -15,7 +15,9 @@ var annotations = {
 }
 
 function compile(doneCallback) {
-	function oneFinished() {
+	function oneFinished(err) {
+		//if(err)
+		//	throw err;
 		if(--sourcesCount == 0)
 			doneCallback();
 	}
@@ -35,12 +37,12 @@ function compile(doneCallback) {
 		fs.readFile("src/" + file, "utf-8", function(err, fileContent) {
 			if(err) {
 				console.error("ERROR reading " + file + ": " + err);
-				oneFinished();
+				oneFinished(err);
 			}
 			yamyam.parse(fileContent, { format: { block: false, annotations: annotations } }, function(err, result) {
 				if(err) {
 					console.error("ERROR in " + file + ": " + err);
-					oneFinished();
+					oneFinished(err);
 				}
 				/*
 					result =
@@ -77,7 +79,7 @@ function compile(doneCallback) {
 				fs.readFile("templates/"+data.settings.template+".jade", "utf-8", function(err, templateContent) {
 					if(err) {
 						console.error("ERROR reading template for " + file + ": " + err);
-						oneFinished();
+						oneFinished(err);
 					}
 					var template = jade.compile(templateContent, {});
 					fs.writeFile("out/" + data.settings.output + ".html",
