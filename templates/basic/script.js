@@ -1,3 +1,4 @@
+var template;
 $(function() {
 	$.jmpress("template", "main", {
 		children: function(idx) {
@@ -29,7 +30,7 @@ $(function() {
 		},
 		stepSelector: "section",
 		presentationMode: {
-			url: "http://sokra.github.com/jmpress.js/presentation-screen.html"
+			url: "../templates/" + template + "/presentation-screen.html"
 		}
 	}, true);
 });
