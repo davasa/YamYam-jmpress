@@ -1,5 +1,4 @@
 body {
-	background: black;
 	text-align: center;
 	font-family: sans-serif;
 	margin: 0px;
@@ -11,9 +10,7 @@ section {
 	width: 944px;
 	height: 688px;
 	margin: 0px;
-	margin-bottom: 40px;
 	padding: 40px;
-	background: white;
 	display: inline-block;
 	text-align: left;
 	overflow: hidden;
@@ -21,9 +18,18 @@ section {
 	clear: both;
 }
 
-@media(print) {
+@media screen {
+	body {
+		background: black;
+	}
 	section {
-		page-break-after: always;
+		background: white;
+		margin-bottom: 40px;
+	}
+}
+
+@media print {
+	section {
 		margin-bottom: 0px;
 	}
 }
