@@ -135,27 +135,23 @@ see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
 
 ```
 [@output template="<template-name>" output="<output-file-name>"]
-[@settings author="<Your Name>" date="<Your Date>" copyright="<Your Copyright>"]
-[@settings title="<Your Title>"]
+[@settings author="<Your Name>" copyright="<Your Copyright>"]
+[@settings date="<Your Date>" title="<Your Title>"]
 [title]
 
 ... The first slide
-
 
 [subtitle]
 
 ... A title slide
 
-
 [page]
 
 ... A simple slide
 
-
 [page]
 
 ... Another simple slide
-
 
 [end]
 
