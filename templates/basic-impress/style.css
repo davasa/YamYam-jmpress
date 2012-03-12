@@ -1,0 +1,199 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+.step {
+	position: relative;
+	width: 944px;
+	height: 688px;
+	margin: 0px;
+	padding: 40px;
+	display: inline-block;
+	text-align: left;
+	overflow: hidden;
+	font-size: 22px;
+	clear: both;
+}
+
+@media screen {
+	body {
+		background: black;
+	}
+	.step {
+		background: white;
+		margin-bottom: 40px;
+	}
+}
+
+@media print {
+	.step {
+		margin-bottom: 0px;
+	}
+}
+
+.step footer {
+	position: absolute;
+	top: 718px;
+	height: 50px;
+	font-size: 16px;
+	left: 0px;
+	right: 0px;
+	border-top: 3px solid #999;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #EEE;
+}
+
+.step footer table {
+	width: 100%;
+}
+
+.step footer table td {
+	width: 33%;
+	text-align: center;
+	padding: 5px;
+	vertical-align: bottom;
+}
+
+.step footer table td:first-child {
+	text-align: left;
+}
+.step footer table td:last-child {
+	text-align: right;
+}
+
+.step.title {
+	text-align: center;
+}
+
+.step.title h1 {
+	font-size: 50px;
+	margin-top: 200px;
+}
+
+.step.title h2 {
+	font-size: 30px;
+	margin-top: 100px;
+}
+
+.step.title p {
+	font-size: 20px;
+	margin-top: 50px;
+}
+
+.step.subtitle {
+	text-align: center;
+}
+
+.step.subtitle h1 {
+	font-size: 40px;
+	margin-top: 150px;
+}
+
+.step.subtitle h2 {
+	font-size: 30px;
+	margin-top: 50px;
+}
+
+.step.subtitle p {
+	font-size: 20px;
+	margin-top: 50px;
+}
+
+.step.end {
+	text-align: center;
+}
+
+.step.end h1 {
+	font-size: 50px;
+	margin-top: 200px;
+}
+
+.step.end h2 {
+	font-size: 30px;
+	margin-top: 100px;
+}
+
+.step.end p {
+	font-size: 20px;
+	margin-top: 50px;
+}
+
+.step.page {
+	
+}
+
+.step.page h1 {
+	font-size: 40px;
+	padding-top: 40px;
+	margin-top: -40px;
+	padding-bottom: 25px;
+	margin-bottom: 13px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-left: -40px;
+	margin-right: -40px;
+	border-bottom: 3px solid #999;
+	background: #EEE;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.step.page h2 {
+	font-size: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: normal;
+}
+
+.step.page h3 {
+	font-size: 28px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.step.page h4 {
+	font-size: 26px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+code, pre {
+	border: 1px solid #BBB;
+	border-radius: 5px;
+	background: #EEE;
+}
+
+pre {
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+code {
+	padding: 2px;
+}
+
+pre + p {
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.right {
+	float: right;
+}
+
+img[alt=side] {
+	float: right;
+	display: block;	
+}
