@@ -1,6 +1,6 @@
 [@output template="basic" output="example"]
 [@output template="basic-impress" output="example-impress"]
-[@settings author="Tobias Koppers" date="2012/02/27" copyright="MIT License"]
+[@settings author="Tobias Koppers" date="2012/03/13" copyright="MIT License"]
 [@settings title="Example presentation"]
 [title]
 
@@ -134,7 +134,7 @@ see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
 # Page Structure
 
 ```
-[@settings template="basic" output="<output file name>"]
+[@output template="<template-name>" output="<output-file-name>"]
 [@settings author="<Your Name>" date="<Your Date>" copyright="<Your Copyright>"]
 [@settings title="<Your Title>"]
 [title]
@@ -169,8 +169,12 @@ see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
 
 # Customizing
 
-If you want to make your own template, simply copy `basic.dust.html` and the `basic` folder in `templates/` and rename the copies.
+If you want to make your own template, simply copy `basic.jade` and the `basic` folder in `templates/` and rename the copies.
 In your markdown file you can specify your own template.
+
+```
+[@output template="<template-name>" output="<output-file-name>"]
+```
 
 The template is really short and should be easy to understand and extend.
 
