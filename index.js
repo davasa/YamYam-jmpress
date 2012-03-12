@@ -18,6 +18,9 @@ function compile(doneCallback) {
 	function oneFinished(err) {
 		//if(err)
 		//	throw err;
+		if(err) {
+			console.error(err);
+		}
 		if(--sourcesCount == 0)
 			doneCallback();
 	}
@@ -50,7 +53,8 @@ function compile(doneCallback) {
 						content: "..." } ]
 				*/
 				var blocks = [],
-					data = { sections: blocks, settings: {} };
+					data = { sections: blocks, settings: {} },
+					outputs = [];
 				result.forEach(function(block) {
 					var page = {content: block.content};
 
@@ -59,6 +63,8 @@ function compile(doneCallback) {
 							for(var name in annotation.params) {
 								data.settings[name] = annotation.params[name];
 							}
+						} else if(annotation.name === "@output") {
+							outputs.push({template: annotation.params.template, output: annotation.params.output});
 						} else {
 							if(annotation.name) {
 								page.template = page["class"] = annotation.name;
@@ -72,20 +78,37 @@ function compile(doneCallback) {
 					blocks.push(page);
 				});
 				console.log(file + " yam read! Now read template...");
-				if(!data.settings.template)
-					data.settings.template = "basic";
-				if(!data.settings.output)
-					data.settings.output = file.substr(0, file.indexOf("."));
-				fs.readFile("templates/"+data.settings.template+".jade", "utf-8", function(err, templateContent) {
+				if(outputs.length === 0) {
+					if(!data.settings.template)
+						data.settings.template = "basic";
+					if(!data.settings.output)
+						data.settings.output = file.substr(0, file.indexOf("."));
+					outputs.push({template: data.settings.template, output: data.settings.output});
+				}
+				var outputsCount = outputs.length;
+				function outputFinished(err) {
 					if(err) {
-						console.error("ERROR reading template for " + file + ": " + err);
-						oneFinished(err);
+						console.error(err);
 					}
-					var template = jade.compile(templateContent, {});
-					fs.writeFile("out/" + data.settings.output + ".html",
-						template(data), "utf-8", function(err) {
-						console.log("SUCCESSFUL: " + file + " -> " + data.settings.output);
+					outputsCount--;
+					if(outputsCount === 0) {
 						oneFinished();
+					}
+				}
+				outputs.forEach(function(output) {
+					fs.readFile("templates/"+output.template+".jade", "utf-8", function(err, templateContent) {
+						if(err) {
+							console.error("ERROR reading template for " + file + ": " + err);
+							outputFinished(err);
+						}
+						var template = jade.compile(templateContent, {});
+						data.settings.template = output.template;
+						data.settings.output = output.output;
+						fs.writeFile("out/" + output.output + ".html",
+							template(data), "utf-8", function(err) {
+							console.log("SUCCESSFUL: " + file + " -> " + output.output);
+							outputFinished();
+						});
 					});
 				});
 			});

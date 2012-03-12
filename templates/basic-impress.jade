@@ -1,0 +1,34 @@
+!!! html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title= settings.title
+
+		link(href="../templates/#{settings.template}/style.css", rel="stylesheet", type="text/css")
+
+	body
+		div#impress
+			each section, pagenumber in sections
+				- var x = 0;
+				- var y = pagenumber * 950;
+				- var scale = 1;
+				- if(section.template === "title") { x = -6000; y = -1000; scale = 4; }
+				- if(section.template === "end") { x = -6000; scale = 4; }
+				- if(section.template === "subtitle") { x = -2000; scale = 2; }
+				.step(class=section.class, data-x=x, data-y=y, data-scale=scale)
+					footer
+						table
+							tr
+								td
+									| #{settings.title}
+									br
+									| #{settings.date}
+								td
+									| #{settings.copyright}
+									br
+									| #{settings.author}
+								td= pagenumber + 1
+					| !{section.content}
+		script(type="text/javascript", src="../templates/#{settings.template}/impress.js")
+		script
+			impress();

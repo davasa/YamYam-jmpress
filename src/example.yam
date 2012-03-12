@@ -1,4 +1,5 @@
-[@settings template="basic" output="example"]
+[@output template="basic" output="example"]
+[@output template="basic-impress" output="example-impress"]
 [@settings author="Tobias Koppers" date="2012/02/27" copyright="MIT License"]
 [@settings title="Example presentation"]
 [title]
@@ -10,9 +11,15 @@ Have fun using it!
 
 Note: If you are new to jmpress.js presentations: Try to navigate with arrow keys or spacebar.
 
+
+
+
 [subtitle]
 
 # Introduction
+
+
+
 
 [page]
 
@@ -34,6 +41,9 @@ At first run `npm install` to install dependencies.
 Run `node .` to compile `src/` to `out/`.
 Or run `node watch` to autocompile on change.
 
+
+
+
 [page]
 
 # Reasons
@@ -48,6 +58,9 @@ Or run `node watch` to autocompile on change.
 
 * ...
 
+
+
+
 [subtitle]
 
 # Markdown
@@ -55,6 +68,9 @@ Or run `node watch` to autocompile on change.
 ## Works with YamYam
 
 see [sokra/YamYam](http://github.com/sokra/YamYam)
+
+
+
 
 [page]
 
@@ -85,6 +101,9 @@ Next paragraph
 See this in action on next page...
 See more syntax on [sokra/YamYam](http://github.com/sokra/YamYam)
 
+
+
+
 [page]
 
 # Page Headline
@@ -108,6 +127,8 @@ Next paragraph
 see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
 
 
+
+
 [page]
 
 # Page Structure
@@ -120,22 +141,29 @@ see [sokra/YamYam demo page](http://sokra.github.com/YamYam) for more action
 
 ... The first slide
 
+
 [subtitle]
 
 ... A title slide
+
 
 [page]
 
 ... A simple slide
 
+
 [page]
 
 ... Another simple slide
+
 
 [end]
 
 ... Thanks for...
 ```
+
+
+
 
 [page]
 
@@ -151,6 +179,9 @@ Feel free to modify the files to your needs.
 ## Contribute
 
 If you want to contribute your template to the community, feel free to send it as pull request.
+
+
+
 
 [page]
 
@@ -190,6 +221,9 @@ Red text
 
 [@attrs style="color: red"]
 Red text
+
+
+
 
 [end]
 
